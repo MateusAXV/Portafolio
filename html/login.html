@@ -1,0 +1,26 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Establece el idioma del documento -->
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo -->
+    <title>Login</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Enlace al archivo de estilos CSS -->
+</head>
+<body>
+    <div class="login-container"> <!-- Contenedor del formulario de login -->
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm"> <!-- Formulario de inicio de sesión -->
+            <label for="username">Usuario</label>
+            <input type="text" id="username" required> <!-- Campo de entrada para el usuario -->
+            
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" required> <!-- Campo de entrada para la contraseña -->
+            
+            <button type="submit">Ingresar</button> <!-- Botón de envío del formulario -->
+            <p id="error-message"></p> <!-- Mensaje de error -->
+        </form>
+    </div>
+    <script src="/js/users.js"></script> <!-- Enlace al archivo de usuarios -->
+    <script src="/js/script.js"></script> <!-- Enlace al archivo de script JavaScript -->
+</body>
+</html>

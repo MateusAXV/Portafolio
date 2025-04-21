@@ -1,0 +1,263 @@
+/* ========== VARIABLES GLOBALES ========== */
+:root {
+  --bg-color: #0d1117;         /* Fondo oscuro tipo terminal */
+  --text-color: #58a6ff;       /* Azul brillante para el texto */
+  --cursor-color: #58a6ff;     /* Mismo color para el cursor */
+  --font: 'Courier New', Courier, monospace;  /* Fuente estilo consola */
+  --font-size-base: 1rem; /* Aumento base del tamaño de fuente */
+}
+
+/* Reset general para evitar márgenes y paddings por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== ESTILOS DEL BODY ========== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font);
+  padding: 2rem;
+  font-size: var(--font-size-base);
+}
+
+/* ========== MENÚ TIPO TERMINAL ========== */
+.menu-terminal {
+  width: 100%;
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 1rem;  /* Aumento el padding del menú */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-family: var(--font);
+  display: flex;
+  justify-content: space-between; /* Asegura que el botón hamburguesa y el menú estén en línea */
+  align-items: center;
+}
+
+/* El menú por defecto */
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;  /* Aumento el espacio entre los elementos del menú */
+}
+
+.menu li {
+  padding: 1rem 0;
+}
+
+.menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: #79c0ff;
+}
+
+/* Estilo para el botón hamburguesa */
+.hamburger-menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+/* ========== LAYOUT CON DOS COLUMNAS ========== */
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  gap: 3rem; /* Aumento el espacio entre las columnas */
+  margin-top: 80px;  /* Asegura que el contenido se vea debajo del header */
+}
+
+/* ========== PERFIL IZQUIERDO (tipo GitHub) ========== */
+.profile {
+  width: 280px; /* Aumento el tamaño de la columna */
+  background-color: #161b22;
+  border-radius: 10px;
+  padding: 2rem; /* Aumento el padding */
+  text-align: center;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.profile img {
+  width: 200px;  /* Aumento el tamaño de la imagen */
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--text-color);
+}
+
+.profile h1 {
+  font-size: 1.8rem; /* Aumento el tamaño del nombre */
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.profile p {
+  font-size: 1.4rem; /* Aumento el tamaño de la descripción */
+  margin-bottom: 1.5rem;
+  color: #c9d1d9;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem; /* Aumento el tamaño de las habilidades */
+  color: #8b949e;
+  text-align: left; /* Alinea el contenido de la lista a la izquierda */
+}
+
+.skills li {
+  margin-bottom: 0.6rem;
+}
+
+/* ========== TERMINAL ========== */
+.terminal {
+  max-width: 800px;
+  width: 100%;
+  background-color: #161b22;
+  border-radius: 10px;
+  padding: 2.5rem;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+}
+
+.output {
+  white-space: pre-wrap;
+  line-height: 1.8; /* Aumento el interlineado */
+}
+
+/* ========== CURSOR ========== */
+.cursor {
+  display: inline-block;
+  width: 12px;
+  height: 24px;
+  background-color: var(--cursor-color);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ========== ADAPTACIÓN RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile {
+      width: 100%;
+      padding: 2rem;
+      position: static; /* Quita el sticky en pantallas pequeñas */
+      top: auto;
+  }
+
+  .terminal {
+      width: 100%;
+      padding: 1.5rem;
+  }
+}
+
+/* Estilo para la sección de Información */
+.informacion {
+  margin-top: 100px;  /* Espacio para que no quede pegado al menú */
+  padding: 2rem;
+  background-color: #161b22;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+}
+
+.informacion h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.informacion p {
+  font-size: 1.2rem;
+  color: #c9d1d9;
+  text-align: justify; /* ← Aquí justificamos el texto */
+}
+
+/* Estilo para el QR */
+.profile .qr-code {
+  width: 120px; /* Ajusta el tamaño del QR */
+  height: 120px;
+  margin-top: 1rem; /* Espacio entre el título y el QR */
+  border: 2px solid var(--text-color); /* Borde para hacerlo resaltar un poco */
+  border-radius: 8px; /* Bordes redondeados */
+  object-fit: cover; /* Mantiene la imagen sin deformarse */
+}
+
+/* Estilo para el botón hamburguesa */
+.hamburger-menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estilo para el menú (por defecto en móviles, oculto) */
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menu li {
+  padding: 1rem 0;
+}
+
+/* Muestra el botón hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+  .hamburger-menu {
+      display: block; /* Muestra el botón hamburguesa */
+  }
+
+  .menu {
+      display: none; /* Oculta el menú en pantallas pequeñas */
+      flex-direction: column; /* Coloca los elementos verticalmente */
+      width: 100%;
+      text-align: center;
+      background-color: #161b22;
+      position: absolute;
+      top: 60px; /* Debajo del header */
+      left: 0;
+      z-index: 100;
+  }
+
+  /* Cuando se activa la clase "active", muestra el menú */
+  .menu.active {
+      display: flex; /* Muestra el menú */
+  }
+}
+
+.secret-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.secret-link:hover {
+  color: #ff79c6; /* Un rosa hacker-style tipo Dracula Theme */
+  cursor: pointer;
+ 
+}
