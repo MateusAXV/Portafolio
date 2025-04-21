@@ -11,7 +11,7 @@ function checkAuth() {
 function logout() {
     localStorage.removeItem("authToken");
     localStorage.removeItem("authTokenExpiration");
-    window.location.href = "/html/login.html";
+    window.location.href = "../html/login.html";
 }
 
 // Ejecuta la validación al cargar la página

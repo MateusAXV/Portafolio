@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         localStorage.setItem("authTokenExpiration", expirationTime);//expiracion token
 
         //alert("Inicio de sesión exitoso");
-        window.location.href = "/html/menuPrincipal.html"; // Redirige al menú principal
+        window.location.href = "../html/menuPrincipal.html"; // Redirige al menú principal
     } else {
         errorMessage.textContent = "Usuario o contraseña incorrectos";
     }
