@@ -102,7 +102,7 @@ body {
 }
 
 .profile h1 {
-  font-size: 1.8rem; /* Aumento el tamaño del nombre */
+  font-size: 1.5rem; /* Aumento el tamaño del nombre */
   margin-bottom: 1rem;
   color: var(--text-color);
 }
