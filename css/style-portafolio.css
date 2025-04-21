@@ -366,12 +366,14 @@ body {
   font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 0.5rem;
+  
 }
 
 .proyecto-info p {
   font-size: 1rem;
   color: #b0bac5;
   margin-bottom: 1rem;
+  
 }
 
 /* Botón de enlace al proyecto */
@@ -388,6 +390,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  
 }
 
 .btn-proyecto:hover {
