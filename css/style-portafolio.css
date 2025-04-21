@@ -305,3 +305,102 @@ body {
 .contacto .btn-correo:hover {
   background-color: #218739;
 }
+
+/* Estilo para la sección de Proyectos */
+.proyectos {
+  margin-top: 100px;
+  padding: 2rem;
+  background-color: #161b22;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+}
+
+.proyectos h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.proyectos p {
+  font-size: 1.2rem;
+  color: #c9d1d9;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+/* Lista de proyectos */
+.proyectos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Rejilla responsiva */
+  gap: 2rem;
+}
+
+/* Estilo para cada proyecto */
+.proyecto {
+  background-color: #21262d;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del proyecto */
+.proyecto-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Información del proyecto */
+.proyecto-info {
+  padding: 1.5rem;
+  color: #c9d1d9;
+}
+
+.proyecto-info h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-info p {
+  font-size: 1rem;
+  color: #b0bac5;
+  margin-bottom: 1rem;
+}
+
+/* Botón de enlace al proyecto */
+.btn-proyecto {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #79c0ff;
+  color: #161b22;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn-proyecto:hover {
+  background-color: #60a1d9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Compensación para el header fijo al hacer scroll a una sección */
+#inicio,
+#informacion,
+#contacto,
+#proyectos {
+  scroll-margin-top: 100px; /* Ajusta si tu header es más alto o más bajo */
+}
