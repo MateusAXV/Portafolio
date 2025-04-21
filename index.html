@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,86 +9,112 @@
 </head>
 
 <body>
-    <!-- MENÚ / HEADER -->
-    <header class="menu-terminal">
-      <!-- Botón hamburguesa -->
-      <div class="hamburger-menu" onclick="toggleMenu()">
-        &#9776; <!-- Icono de hamburguesa -->
-      </div>
-      
-      <!-- Menú (inicialmente oculto en pantallas pequeñas) -->
-      <ul class="menu" id="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#informacion">Información</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+  <!-- MENÚ / HEADER -->
+  <header class="menu-terminal">
+    <!-- Botón hamburguesa -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      &#9776; <!-- Icono de hamburguesa -->
+    </div>
+
+    <!-- Menú (inicialmente oculto en pantallas pequeñas) -->
+    <ul class="menu" id="menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#informacion">Información</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+    <script src="js/menu.js"></script>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL CON DOS COLUMNAS -->
+  <main class="container">
+
+    <!-- PERFIL IZQUIERDO -->
+    <aside class="profile">
+      <img src="img/logo.png" alt="Foto de Ana" />
+      <h1>Ana</h1>
+      <p>Ingeniera de Sistemas y Computacion</p>
+      <!-- Aquí va el QR, envuelto en un enlace -->
+      <a href="https://www.acreditta.com/credential/c3753971-39d6-4a6e-86e7-1abfecf097c8" target="_blank">
+        <img src="img/QR.png" alt="Código QR" class="qr-code">
+      </a>
+      <ul class="skills">
+        <li>-Java</li>
+        <li>-JavaScript</li>
+        <li>-HTML/CSS</li>
+        <li>-Python</li>
+        <li>-Wordpress</li>
+        <li>-VBA</li>
+        <li>
+          <a href="html/login.html" class="secret-link">&lt;\&gt;</a>
+        </li>
       </ul>
+    </aside>
 
-      <script src="js/menu.js"></script>
-    </header>
-  
-    <!-- CONTENEDOR PRINCIPAL CON DOS COLUMNAS -->
-    <main class="container">
-      
-      <!-- PERFIL IZQUIERDO -->
-      <aside class="profile">
-        <img src="img/logo.png" alt="Foto de Ana" />
-        <h1>Ana</h1>
-        <p>Ingeniera de Sistemas y Computacion</p>
-        <!-- Aquí va el QR, envuelto en un enlace -->
-            <a href="https://www.acreditta.com/credential/c3753971-39d6-4a6e-86e7-1abfecf097c8" target="_blank">
-                <img src="img/QR.png" alt="Código QR" class="qr-code">
-            </a>
-        <ul class="skills">
-          <li>-Java</li>
-          <li>-JavaScript</li>
-          <li>-HTML/CSS</li>
-          <li>-Python</li>
-          <li>-Wordpress</li>
-          <li>-VBA</li>
-          <li>
-            <a href="html/login.html" class="secret-link">&lt;\&gt;</a>
-          </li>
-        </ul>
-      </aside>
-  
-      <!-- TERMINAL DERECHA -->
-      <section class="terminal">
-        <div class="output" id="info">
-          Bienvenidos a mi portafolio \
-         
-          &gt; Apasionada por la tecnología y el desarrollo web<br />
-          &gt;¡Explora mis proyectos y contáctame si quieres colaborar!
+    <!-- TERMINAL DERECHA -->
+    <section class="terminal">
+      <div class="output" id="info">
+        Bienvenidos a mi portafolio \
+
+        &gt; Apasionada por la tecnología y el desarrollo web<br />
+        &gt;¡Explora mis proyectos y contáctame si quieres colaborar!
+      </div>
+      <div class="cursor"></div>
+
+      <!-- Sección de Información -->
+      <section id="informacion" class="informacion">
+        <h2>Información</h2>
+
+        <p>
+          Ingeniera en sistemas con enfoque en desarrollo web y automatización de procesos. Me apasiona crear soluciones
+          prácticas y eficientes, combinando código limpio con diseño funcional.
+        </p>
+        <br />
+        <p>
+          Tengo experiencia con tecnologías como HTML, CSS, JavaScript, Python y manejo herramientas como WordPress y
+          macros en Excel (VBA). También me interesa la ciberseguridad y el rendimiento del software.
+        </p>
+        <br />
+        <p>
+          Actualmente busco oportunidades donde pueda seguir creciendo como desarrollador mientras contribuyo a
+          proyectos con impacto real.
+        </p>
+        <br />
+        <p>
+          📍 Colombia<br>
+          🌐 Idiomas: Español (nativo), Inglés (B1)<br>
+          🧩 Intereses: Tecnología, innovación digital
+        </p>
+        <br />
+
+      </section>
+
+      <!-- SECCIÓN DE CONTACTO -->
+      <section id="contacto" class="contacto">
+        <h2>Contacto</h2>
+        <br />
+
+        <!-- Información de contacto: teléfono y correo -->
+        <div class="info-contacto">
+          <p>📞 <strong>Teléfono:</strong> +57 322 6576782</p>
+          <p>📧 <strong>Correo:</strong> ximenavanegas88@gmail.com</p>
+          <br />
+
+          <!-- Botones para enviar correo y copiar correo -->
+          <div class="botones-correo">
+            <!-- Botón que abre el cliente de correo -->
+            <a href="mailto:ximenavanegas88@gmail.com" class="btn-correo">Enviar correo</a>
+            <!-- Botón que ejecuta una función para copiar el correo al portapapeles -->
+            <button onclick="copiarCorreo()" class="btn-correo">Copiar correo</button>
+          </div>
         </div>
-        <div class="cursor"></div>
+      </section>
 
-        <!-- Sección de Información -->
-        <section id="informacion" class="informacion">
-            <h2>Información</h2>
-          
-            <p>
-              Ingeniera en sistemas con enfoque en desarrollo web y automatización de procesos. Me apasiona crear soluciones prácticas y eficientes, combinando código limpio con diseño funcional.
-            </p>
-            <br />
-            <p>
-              Tengo experiencia con tecnologías como HTML, CSS, JavaScript, Python y manejo herramientas como WordPress y macros en Excel (VBA). También me interesa la ciberseguridad y el rendimiento del software.
-            </p>
-            <br />
-            <p>
-              Actualmente busco oportunidades donde pueda seguir creciendo como desarrollador mientras contribuyo a proyectos con impacto real.
-            </p>
-            <br />
-            <p>
-              📍 Colombia<br>
-              🌐 Idiomas: Español (nativo), Inglés (B1)<br>
-              🧩 Intereses: Tecnología, innovación digital
-            </p>
-          </section>
-          
-        
-      </section>      
-  
-    </main>
-    
+    </section>
+
+  </main>
+
 
 </body>
+
 </html>

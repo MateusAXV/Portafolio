@@ -261,3 +261,47 @@ body {
   cursor: pointer;
  
 }
+
+/* Estilo para la sección de Contacto */
+.contacto {
+  margin-top: 50px;  /* Espacio para que no quede pegado al contenido anterior */
+  padding: 2rem;
+  background-color: #161b22;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+  font-size: 1.2rem;
+}
+
+/* Estilo para los enlaces de correo y teléfono */
+.contacto a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  
+}
+
+.contacto a:hover {
+  color: #79c0ff;   
+}
+
+/* Estilo de los botones de correo */
+.contacto .btn-correo {
+  display: inline-block;
+  background-color: #2ea44f;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.contacto .btn-correo:hover {
+  background-color: #218739;
+}
