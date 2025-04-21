@@ -1,8 +1,8 @@
 // Función para alternar el menú desplegable
 function toggleMenu() {
-    var menu = document.getElementById("menu");
-    menu.classList.toggle("active");  // Alterna la clase "active" para mostrar/ocultar el menú
-  }
+  var menu = document.getElementById("menu");
+  menu.classList.toggle("active");  // Alterna la clase "active" para mostrar/ocultar el menú
+}
 // Función para copiar el correo electrónico al portapapeles
 function copiarCorreo() {
   const correo = "ximenavanegas88@gmail.com"; // Correo a copiar
