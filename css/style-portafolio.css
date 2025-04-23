@@ -2,9 +2,9 @@
 :root {
   --bg-color: #0d1117;         /* Fondo oscuro tipo terminal */
   --text-color: #58a6ff;       /* Azul brillante para el texto */
-  --cursor-color: #58a6ff;     /* Mismo color para el cursor */
+  --cursor-color: #58a6ff;     /* Color del cursor animado */
   --font: 'Courier New', Courier, monospace;  /* Fuente estilo consola */
-  --font-size-base: 1rem; /* Aumento base del tamaño de fuente */
+  --font-size-base: 1rem;      /* Tamaño base de fuente */
 }
 
 /* Reset general para evitar márgenes y paddings por defecto */
@@ -26,25 +26,24 @@ body {
 /* ========== MENÚ TIPO TERMINAL ========== */
 .menu-terminal {
   width: 100%;
-  background-color: #161b22;
-  border-bottom: 1px solid #30363d;
-  padding: 1rem;  /* Aumento el padding del menú */
+  background-color: #161b22;              /* Fondo del menú */
+  border-bottom: 1px solid #30363d;       /* Línea inferior tipo terminal */
+  padding: 1rem;                          /* Espaciado interno */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  font-family: var(--font);
+  z-index: 10;                           /* Asegura que esté encima del contenido */
   display: flex;
-  justify-content: space-between; /* Asegura que el botón hamburguesa y el menú estén en línea */
+  justify-content: space-between;         /* Alinea menú y botón hamburguesa */
   align-items: center;
 }
 
-/* El menú por defecto */
+/* Lista del menú */
 .menu {
   display: flex;
   list-style: none;
   justify-content: center;
-  gap: 2rem;  /* Aumento el espacio entre los elementos del menú */
+  gap: 2rem;
 }
 
 .menu li {
@@ -59,32 +58,33 @@ body {
 }
 
 .menu a:hover {
-  color: #79c0ff;
+  color: #79c0ff;                          /* Color al pasar el cursor */
 }
 
-/* Estilo para el botón hamburguesa */
+/* Botón hamburguesa oculto por defecto */
 .hamburger-menu {
   display: none;
   font-size: 2rem;
   cursor: pointer;
   color: var(--text-color);
 }
-/* ========== LAYOUT CON DOS COLUMNAS ========== */
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .container {
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 2rem;
-  gap: 3rem; /* Aumento el espacio entre las columnas */
-  margin-top: 80px;  /* Asegura que el contenido se vea debajo del header */
+  padding: 2rem;
+  gap: 3rem;
+  margin-top: 80px;  /* Deja espacio para el menú fijo */
 }
 
-/* ========== PERFIL IZQUIERDO (tipo GitHub) ========== */
+/* ========== PERFIL (COLUMNA IZQUIERDA) ========== */
 .profile {
-  width: 280px; /* Aumento el tamaño de la columna */
+  width: 280px;
   background-color: #161b22;
   border-radius: 10px;
-  padding: 2rem; /* Aumento el padding */
+  padding: 2rem;
   text-align: center;
   box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
   position: sticky;
@@ -93,7 +93,7 @@ body {
 }
 
 .profile img {
-  width: 200px;  /* Aumento el tamaño de la imagen */
+  width: 200px;
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
@@ -102,13 +102,13 @@ body {
 }
 
 .profile h1 {
-  font-size: 1.5rem; /* Aumento el tamaño del nombre */
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--text-color);
 }
 
 .profile p {
-  font-size: 1.4rem; /* Aumento el tamaño de la descripción */
+  font-size: 1.4rem;
   margin-bottom: 1.5rem;
   color: #c9d1d9;
 }
@@ -116,16 +116,16 @@ body {
 .skills {
   list-style: none;
   padding: 0;
-  font-size: 1.2rem; /* Aumento el tamaño de las habilidades */
+  font-size: 1.2rem;
   color: #8b949e;
-  text-align: left; /* Alinea el contenido de la lista a la izquierda */
+  text-align: left;
 }
 
 .skills li {
   margin-bottom: 0.6rem;
 }
 
-/* ========== TERMINAL ========== */
+/* ========== ÁREA DE CONTENIDO (TERMINAL) ========== */
 .terminal {
   max-width: 800px;
   width: 100%;
@@ -137,10 +137,10 @@ body {
 
 .output {
   white-space: pre-wrap;
-  line-height: 1.8; /* Aumento el interlineado */
+  line-height: 1.8;  /* Mejora la lectura */
 }
 
-/* ========== CURSOR ========== */
+/* ========== CURSOR ANIMADO ========== */
 .cursor {
   display: inline-block;
   width: 12px;
@@ -153,71 +153,79 @@ body {
   50% { opacity: 0; }
 }
 
-/* ========== ADAPTACIÓN RESPONSIVE ========== */
+/* ========== RESPONSIVE - TABLETS Y MÓVILES ========== */
 @media (max-width: 768px) {
   .container {
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem; /* Agrega espacio entre las columnas en móvil */
   }
 
   .profile {
-      width: 100%;
-      padding: 2rem;
-      position: static; /* Quita el sticky en pantallas pequeñas */
-      top: auto;
+    width: 100%;
+    padding: 1.5rem;
+    position: static;
   }
 
   .terminal {
-      width: 100%;
-      padding: 1.5rem;
-  }
-}
-
-/* Media query para pantallas pequeñas (celulares) */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Cambia las columnas a fila */
-    padding: 1rem; /* Reduce el padding en pantallas pequeñas */
+    width: 100%;
+    padding: 1.5rem;
   }
 
-  .profile, .terminal {
-    margin: 0;
-    padding: 1rem;
-  }
-
-  /* Ajustar la separación entre los elementos */
   .container > * {
-    margin-bottom: 1rem; /* Asegura un buen espacio entre las secciones */
+    margin-bottom: 0; /* Elimina el margen duplicado si usas gap */
+  }
+
+  .hamburger-menu {
+    display: block; /* Muestra menú hamburguesa */
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #161b22;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+  }
+
+  .menu.active {
+    display: flex;
   }
 }
 
+/* ========== RESPONSIVE - MÓVILES PEQUEÑOS ========== */
 @media (max-width: 600px) {
   body {
-    font-size: 0.9rem; /* Reduce el tamaño general de fuente */
-    padding: 0 10px;   /* Disminuye los márgenes laterales del body */
+    font-size: 0.9rem;
+    padding: 0;
   }
 
   .container {
-    padding: 0 10px; /* Reduce el espacio lateral del contenedor */
+    padding: 0;
   }
 
   .informacion,
   .contacto,
   .proyectos {
-    padding: 1rem; /* Ajusta el padding interno de cada sección */
+    padding: 1rem;
     font-size: 0.95rem;
   }
 
   .informacion h2,
   .contacto h2,
   .proyectos h2 {
-    font-size: 1.5rem; /* Tamaño más pequeño para títulos */
+    font-size: 1.5rem;
   }
 }
 
-/* Estilo para la sección de Información */
+/* ========== INFORMACIÓN GENERAL ========== */
 .informacion {
-  margin-top: 100px;  /* Espacio para que no quede pegado al menú */
+  margin-top: 100px;
   padding: 2rem;
   background-color: #161b22;
   border-radius: 10px;
@@ -233,80 +241,35 @@ body {
 .informacion p {
   font-size: 1.2rem;
   color: #c9d1d9;
-  text-align: justify; /* ← Aquí justificamos el texto */
+  text-align: justify;
 }
 
-/* Estilo para el QR */
+/* ========== QR EN PERFIL ========== */
 .profile .qr-code {
-  width: 120px; /* Ajusta el tamaño del QR */
+  width: 120px;
   height: 120px;
-  margin-top: 1rem; /* Espacio entre el título y el QR */
-  border: 2px solid var(--text-color); /* Borde para hacerlo resaltar un poco */
-  border-radius: 8px; /* Bordes redondeados */
-  object-fit: cover; /* Mantiene la imagen sin deformarse */
+  margin-top: 1rem;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-/* Estilo para el botón hamburguesa */
-.hamburger-menu {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* Estilo para el menú (por defecto en móviles, oculto) */
-.menu {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.menu li {
-  padding: 1rem 0;
-}
-
-/* Muestra el botón hamburguesa en pantallas pequeñas */
-@media (max-width: 768px) {
-  .hamburger-menu {
-      display: block; /* Muestra el botón hamburguesa */
-  }
-
-  .menu {
-      display: none; /* Oculta el menú en pantallas pequeñas */
-      flex-direction: column; /* Coloca los elementos verticalmente */
-      width: 100%;
-      text-align: center;
-      background-color: #161b22;
-      position: absolute;
-      top: 60px; /* Debajo del header */
-      left: 0;
-      z-index: 100;
-  }
-
-  /* Cuando se activa la clase "active", muestra el menú */
-  .menu.active {
-      display: flex; /* Muestra el menú */
-  }
-}
-
+/* ========== ENLACE SECRETO ========== */
 .secret-link {
-  color: var(--text-color);
+  color: transparent;
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: bold;
-  color: transparent;
-  transition: color 0.3s ease;
 }
 
 .secret-link:hover {
-  color: #ff79c6; /* Un rosa hacker-style tipo Dracula Theme */
+  color: #ff79c6; /* Rosa estilo hacker */
   cursor: pointer;
- 
 }
 
-/* Estilo para la sección de Contacto */
+/* ========== CONTACTO ========== */
 .contacto {
-  margin-top: 50px;  /* Espacio para que no quede pegado al contenido anterior */
+  margin-top: 50px;
   padding: 2rem;
   background-color: #161b22;
   border-radius: 10px;
@@ -314,20 +277,17 @@ body {
   font-size: 1.2rem;
 }
 
-/* Estilo para los enlaces de correo y teléfono */
 .contacto a {
   color: var(--text-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  
 }
 
 .contacto a:hover {
-  color: #79c0ff;   
+  color: #79c0ff;
 }
 
-/* Estilo de los botones de correo */
 .contacto .btn-correo {
   display: inline-block;
   background-color: #2ea44f;
@@ -348,7 +308,7 @@ body {
   background-color: #218739;
 }
 
-/* Estilo para la sección de Proyectos */
+/* ========== PROYECTOS ========== */
 .proyectos {
   margin-top: 100px;
   padding: 2rem;
@@ -370,14 +330,12 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Lista de proyectos */
 .proyectos-lista {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Rejilla responsiva */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* Estilo para cada proyecto */
 .proyecto {
   background-color: #21262d;
   border-radius: 10px;
@@ -391,14 +349,12 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Imagen del proyecto */
 .proyecto-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Información del proyecto */
 .proyecto-info {
   padding: 1.5rem;
   color: #c9d1d9;
@@ -408,19 +364,19 @@ body {
   font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 0.5rem;
-  
 }
 
 .proyecto-info p {
   font-size: 1rem;
   color: #b0bac5;
   margin-bottom: 1rem;
-  
 }
 
-/* Botón de enlace al proyecto */
 .btn-proyecto {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
   padding: 0.5rem 1rem;
   background-color: #79c0ff;
   color: #161b22;
@@ -428,24 +384,20 @@ body {
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  
 }
 
 .btn-proyecto:hover {
   background-color: #60a1d9;
 }
 
+/* ========== SCROLL SUAVE ========== */
 html {
   scroll-behavior: smooth;
 }
-/* Compensación para el header fijo al hacer scroll a una sección */
+
 #inicio,
 #informacion,
 #contacto,
 #proyectos {
-  scroll-margin-top: 100px; /* Ajusta si tu header es más alto o más bajo */
+  scroll-margin-top: 100px; /* Ajuste para compensar header fijo */
 }
