@@ -173,6 +173,48 @@ body {
   }
 }
 
+/* Media query para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Cambia las columnas a fila */
+    padding: 1rem; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .profile, .terminal {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  /* Ajustar la separación entre los elementos */
+  .container > * {
+    margin-bottom: 1rem; /* Asegura un buen espacio entre las secciones */
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem; /* Reduce el tamaño general de fuente */
+    padding: 0 10px;   /* Disminuye los márgenes laterales del body */
+  }
+
+  .container {
+    padding: 0 10px; /* Reduce el espacio lateral del contenedor */
+  }
+
+  .informacion,
+  .contacto,
+  .proyectos {
+    padding: 1rem; /* Ajusta el padding interno de cada sección */
+    font-size: 0.95rem;
+  }
+
+  .informacion h2,
+  .contacto h2,
+  .proyectos h2 {
+    font-size: 1.5rem; /* Tamaño más pequeño para títulos */
+  }
+}
+
 /* Estilo para la sección de Información */
 .informacion {
   margin-top: 100px;  /* Espacio para que no quede pegado al menú */
