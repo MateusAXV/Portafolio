@@ -15,3 +15,15 @@ function copiarCorreo() {
     console.error(err); // Muestra error en la consola
   });
 }
+
+//animacion foto
+// Espera que el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+  const fotoInner = document.getElementById('foto-inner');
+  let rotado = false;
+
+  setInterval(() => {
+    rotado = !rotado;
+    fotoInner.style.transform = rotado ? 'rotateY(180deg)' : 'rotateY(0deg)';
+  }, 5000); // cada 5 segundos
+});

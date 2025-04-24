@@ -124,6 +124,36 @@ body {
 .skills li {
   margin-bottom: 0.6rem;
 }
+.foto-flip {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 1000px;
+  position: relative;
+}
+
+.foto-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.cara {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  backface-visibility: hidden;
+}
+
+.cara-posterior {
+  transform: rotateY(180deg);
+}
 
 /* ========== ÁREA DE CONTENIDO (TERMINAL) ========== */
 .terminal {
