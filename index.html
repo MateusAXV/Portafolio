@@ -134,28 +134,50 @@
         </div>
       </section>
 
-      <!-- SECCIÓN DE CONTACTO -->
-      <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <br />
+<!-- SECCIÓN DE CONTACTO -->
+<section id="contacto" class="contacto">
+  <h2>Contacto</h2>
+  <br />
 
-        <!-- Información de contacto: teléfono y correo -->
-        <div class="info-contacto">
-          <p>📞 <strong>Teléfono:</strong> +57 322 6576782</p>
-          <p>📧 <strong>Correo:</strong> ximenavanegas88@gmail.com</p>
-          <br />
+  <!-- Información de contacto -->
+  <div class="info-contacto">
+    <p>📞 <strong>Teléfono:</strong> +57 322 6576782</p>
+    <p>📧 <strong>Correo:</strong> ximenavanegas88@gmail.com</p>
+  </div>
 
-          <!-- Botones para enviar correo y copiar correo -->
-          <div class="botones-correo">
-            <!-- Botón que abre el cliente de correo -->
-            <a href="mailto:ximenavanegas88@gmail.com" class="btn-correo">Enviar correo</a>
-            <!-- Botón que ejecuta una función para copiar el correo al portapapeles -->
-            <button onclick="copiarCorreo()" class="btn-correo">Copiar correo</button>
-          </div>
-        </div>
-      </section>
+  <br />
 
-    </section>
+  <!-- Formulario controlado por JS -->
+  <form id="formulario-contacto" class="formulario-contacto">
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <div>
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="Nombre completo" required />
+    </div>
+
+    <div>
+      <label for="correo">Correo electrónico</label>
+      <input type="email" id="correo" name="Correo electrónico" required />
+    </div>
+
+    <div>
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="Teléfono" required />
+    </div>
+
+    <div>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="Mensaje" rows="4" required></textarea>
+    </div>
+
+    <div class="botones-correo">
+      <button type="submit" class="btn-correo" id="enviarBtn">Enviar mensaje</button>
+      <p id="mensaje-resultado" class="mensaje-envio oculto"></p>
+    </div>
+  </form>
+</section>
 
   </main>
 

@@ -431,3 +431,68 @@ html {
 #proyectos {
   scroll-margin-top: 100px; /* Ajuste para compensar header fijo */
 }
+
+/* ========== CAMPOS DEL FORMULARIO DE CONTACTO ========== */
+.formulario-contacto {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formulario-contacto label {
+  color: #c9d1d9;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  border-color: var(--text-color);
+  outline: none;
+  background-color: #161b22;
+}
+
+.formulario-contacto textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.mensaje-envio {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.mensaje-envio.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mensaje-envio.ok {
+  background-color: #2ea44f;
+  color: #ffffff;
+}
+
+.mensaje-envio.error {
+  background-color: #ff4c4c;
+  color: #ffffff;
+}
