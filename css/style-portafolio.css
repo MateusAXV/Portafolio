@@ -1,20 +1,23 @@
 /* ========== VARIABLES GLOBALES ========== */
 :root {
-  --bg-color: #0d1117;         /* Fondo oscuro tipo terminal */
-  --text-color: #58a6ff;       /* Azul brillante para el texto */
-  --cursor-color: #58a6ff;     /* Color del cursor animado */
-  --font: 'Courier New', Courier, monospace;  /* Fuente estilo consola */
-  --font-size-base: 1rem;      /* Tamaño base de fuente */
+  --bg-color: #0d1117;
+  --text-color: #58a6ff;
+  --cursor-color: #58a6ff;
+  --font: 'Courier New', Courier, monospace;
+  --font-size-base: 1rem;
 }
 
-/* Reset general para evitar márgenes y paddings por defecto */
+/* ========== RESET GENERAL ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ========== ESTILOS DEL BODY ========== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -26,23 +29,21 @@ body {
 /* ========== MENÚ TIPO TERMINAL ========== */
 .menu-terminal {
   width: 100%;
-  background-color: #161b22;              /* Fondo del menú */
-  border-bottom: 1px solid #30363d;       /* Línea inferior tipo terminal */
-  padding: 1rem;                          /* Espaciado interno */
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;                           /* Asegura que esté encima del contenido */
+  z-index: 10;
   display: flex;
-  justify-content: space-between;         /* Alinea menú y botón hamburguesa */
+  justify-content: space-between;
   align-items: center;
 }
 
-/* Lista del menú */
 .menu {
   display: flex;
   list-style: none;
-  justify-content: center;
   gap: 2rem;
 }
 
@@ -58,10 +59,9 @@ body {
 }
 
 .menu a:hover {
-  color: #79c0ff;                          /* Color al pasar el cursor */
+  color: #79c0ff;
 }
 
-/* Botón hamburguesa oculto por defecto */
 .hamburger-menu {
   display: none;
   font-size: 2rem;
@@ -72,16 +72,15 @@ body {
 /* ========== CONTENEDOR PRINCIPAL ========== */
 .container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
   gap: 3rem;
-  margin-top: 80px;  /* Deja espacio para el menú fijo */
+  margin-top: 80px;
 }
 
-/* ========== PERFIL (COLUMNA IZQUIERDA) ========== */
+/* ========== COLUMNA IZQUIERDA / PERFIL ========== */
 .profile {
-  width: 280px;
   background-color: #161b22;
   border-radius: 10px;
   padding: 2rem;
@@ -90,15 +89,8 @@ body {
   position: sticky;
   top: 100px;
   align-self: start;
-}
-
-.profile img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1.5rem;
-  border: 3px solid var(--text-color);
+  flex-basis: 35%;
+  font-size: 0.85rem;
 }
 
 .profile h1 {
@@ -108,22 +100,11 @@ body {
 }
 
 .profile p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
   color: #c9d1d9;
 }
 
-.skills {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-  color: #8b949e;
-  text-align: left;
-}
-
-.skills li {
-  margin-bottom: 0.6rem;
-}
 .foto-flip {
   width: 200px;
   height: 200px;
@@ -155,22 +136,66 @@ body {
   transform: rotateY(180deg);
 }
 
-/* ========== ÁREA DE CONTENIDO (TERMINAL) ========== */
+.skills {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #8b949e;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.skills li {
+  margin-bottom: 0.6rem;
+}
+
+/* ========== QR Y DATOS DE CONTACTO LATERAL ========== */
+.profile .qr-code {
+  width: 120px;
+  height: 120px;
+  margin-top: 1rem;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info-contacto-lateral {
+  margin-top: 15px;
+  font-size: 0.7rem;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.info-contacto-lateral a {
+  color: #00ff88;
+  text-decoration: none;
+}
+
+.info-contacto-lateral a:hover {
+  text-decoration: underline;
+}
+
+.info-contacto-lateral p {
+  margin: 4px 0;
+  white-space: nowrap;
+}
+
+/* ========== ÁREA PRINCIPAL (TERMINAL) ========== */
 .terminal {
-  max-width: 800px;
+  max-width: 100%;
   width: 100%;
   background-color: #161b22;
   border-radius: 10px;
   padding: 2.5rem;
   box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
+  flex-grow: 1;
 }
 
 .output {
   white-space: pre-wrap;
-  line-height: 1.8;  /* Mejora la lectura */
+  line-height: 1.8;
 }
 
-/* ========== CURSOR ANIMADO ========== */
 .cursor {
   display: inline-block;
   width: 12px;
@@ -183,163 +208,10 @@ body {
   50% { opacity: 0; }
 }
 
-/* ========== RESPONSIVE - TABLETS Y MÓVILES ========== */
-@media (max-width: 768px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 2rem; /* Agrega espacio entre las columnas en móvil */
-  }
-
-  .profile {
-    width: 100%;
-    padding: 1.5rem;
-    position: static;
-  }
-
-  .terminal {
-    width: 100%;
-    padding: 1.5rem;
-  }
-
-  .container > * {
-    margin-bottom: 0; /* Elimina el margen duplicado si usas gap */
-  }
-
-  .hamburger-menu {
-    display: block; /* Muestra menú hamburguesa */
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background-color: #161b22;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 100;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-}
-
-/* ========== RESPONSIVE - MÓVILES PEQUEÑOS ========== */
-@media (max-width: 600px) {
-  body {
-    font-size: 0.9rem;
-    padding: 0;
-  }
-
-  .container {
-    padding: 0;
-  }
-
-  .informacion,
-  .contacto,
-  .proyectos {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .informacion h2,
-  .contacto h2,
-  .proyectos h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* ========== INFORMACIÓN GENERAL ========== */
-.informacion {
-  margin-top: 100px;
-  padding: 2rem;
-  background-color: #161b22;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
-}
-
-.informacion h2 {
-  font-size: 2rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
-
-.informacion p {
-  font-size: 1.2rem;
-  color: #c9d1d9;
-  text-align: justify;
-}
-
-/* ========== QR EN PERFIL ========== */
-.profile .qr-code {
-  width: 120px;
-  height: 120px;
-  margin-top: 1rem;
-  border: 2px solid var(--text-color);
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* ========== ENLACE SECRETO ========== */
-.secret-link {
-  color: transparent;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: bold;
-}
-
-.secret-link:hover {
-  color: #ff79c6; /* Rosa estilo hacker */
-  cursor: pointer;
-}
-
-/* ========== CONTACTO ========== */
+/* ========== SECCIONES: Información, Proyectos, Contacto ========== */
+.informacion,
+.proyectos,
 .contacto {
-  margin-top: 50px;
-  padding: 2rem;
-  background-color: #161b22;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
-  font-size: 1.2rem;
-}
-
-.contacto a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.contacto a:hover {
-  color: #79c0ff;
-}
-
-.contacto .btn-correo {
-  display: inline-block;
-  background-color: #2ea44f;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.contacto .btn-correo:hover {
-  background-color: #218739;
-}
-
-/* ========== PROYECTOS ========== */
-.proyectos {
   margin-top: 100px;
   padding: 2rem;
   background-color: #161b22;
@@ -347,19 +219,22 @@ body {
   box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
 }
 
-.proyectos h2 {
+.informacion h2,
+.proyectos h2,
+.contacto h2 {
   font-size: 2rem;
   color: var(--text-color);
   margin-bottom: 1rem;
 }
 
+.informacion p,
 .proyectos p {
   font-size: 1.2rem;
   color: #c9d1d9;
   text-align: justify;
-  margin-bottom: 2rem;
 }
 
+/* ========== PROYECTOS ========== */
 .proyectos-lista {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -420,19 +295,7 @@ body {
   background-color: #60a1d9;
 }
 
-/* ========== SCROLL SUAVE ========== */
-html {
-  scroll-behavior: smooth;
-}
-
-#inicio,
-#informacion,
-#contacto,
-#proyectos {
-  scroll-margin-top: 100px; /* Ajuste para compensar header fijo */
-}
-
-/* ========== CAMPOS DEL FORMULARIO DE CONTACTO ========== */
+/* ========== FORMULARIO DE CONTACTO ========== */
 .formulario-contacto {
   margin-top: 2rem;
   display: flex;
@@ -471,28 +334,107 @@ html {
   resize: vertical;
   min-height: 120px;
 }
-.mensaje-envio {
-  margin-top: 1rem;
-  padding: 1rem;
+
+.contacto .btn-correo {
+  background-color: #2ea44f;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
   border-radius: 8px;
   font-weight: bold;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-size: 1rem;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.3s ease;
 }
 
-.mensaje-envio.visible {
-  opacity: 1;
-  transform: translateY(0);
+.contacto .btn-correo:hover {
+  background-color: #218739;
 }
 
-.mensaje-envio.ok {
-  background-color: #2ea44f;
-  color: #ffffff;
+/* ========== ENLACE OCULTO ========== */
+.secret-link {
+  color: transparent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: bold;
 }
 
-.mensaje-envio.error {
-  background-color: #ff4c4c;
-  color: #ffffff;
+.secret-link:hover {
+  color: #ff79c6;
+  cursor: pointer;
+}
+
+/* ========== SCROLL OFFSET POR MENÚ FIJO ========== */
+#inicio,
+#informacion,
+#contacto,
+#proyectos {
+  scroll-margin-top: 100px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .profile {
+    width: 100%;
+    padding: 1.5rem;
+    position: static;
+    font-size: 0.85rem;
+  }
+
+  .terminal {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #161b22;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 100;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .informacion,
+  .contacto,
+  .proyectos {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .informacion h2,
+  .contacto h2,
+  .proyectos h2 {
+    font-size: 1.5rem;
+  }
 }

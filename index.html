@@ -31,39 +31,52 @@
   <main class="container">
 
     <!-- PERFIL IZQUIERDO -->
-    <aside class="profile">
-      <div class="foto-flip">
-        <div class="foto-inner" id="foto-inner">
-          <img src="img/logo.png" class="cara cara-frontal" alt="Foto de Ana" />
-          <img src="img/fotoCV.png" class="cara cara-posterior" alt="Otra foto de Ana" />
-        </div>
-      </div>
-      <br />
-      <h1>Ana Ximena Vanegas Mateus</h1>
-      <p>Ingeniera de Sistemas y Computacion</p>
-      <!-- Aquí va el QR, envuelto en un enlace -->
-      <a href="https://www.acreditta.com/credential/c3753971-39d6-4a6e-86e7-1abfecf097c8" target="_blank">
-        <img src="img/QR.png" alt="Código QR" class="qr-code">
-      </a>
-      <ul class="skills">
-        <li>-Java</li>
-        <li>-JavaScript</li>
-        <li>-HTML/CSS</li>
-        <li>-Python</li>
-        <li>-Wordpress</li>
-        <li>-VBA</li>
-        <li>
-          <a href="html/login.html" class="secret-link">&lt;\&gt;</a>
-        </li>
-      </ul>
-    </aside>
+<aside class="profile wide-profile"><!-- CAMBIO: clase nueva para ancho -->
+  <div class="foto-flip">
+    <div class="foto-inner" id="foto-inner">
+      <img src="img/logo.png" class="cara cara-frontal" alt="Foto de Ana" />
+      <img src="img/fotoCV.png" class="cara cara-posterior" alt="Otra foto de Ana" />
+    </div>
+  </div>
+  <br />
+  <h1>Ana Ximena Vanegas Mateus</h1>
+  <p>Ingeniera de Sistemas y Computacion</p>
+
+  
+  <!-- CAMBIO: primero habilidades -->
+  <ul class="skills">
+    <li>- Java</li>
+    <li>- HTML/ CSS/ JavaScript</li>
+    <li>- Python</li>
+    <li>- Wordpress & Elementor</li>
+    <li>- Excel Avanzado & VBA</li>
+    <li><a href="html/login.html" class="secret-link">&lt;\&gt;</a></li>
+  </ul>
+  </h2>
+
+  <!-- CAMBIO: luego el QR -->
+  <a href="https://www.acreditta.com/credential/c3753971-39d6-4a6e-86e7-1abfecf097c8" target="_blank">
+    <img src="img/QR.png" alt="Código QR" class="qr-code">
+  </a>
+
+  <!-- Contacto debajo del QR -->
+<div class="info-contacto-lateral">
+  <p><strong>🔗</strong> 
+    <a href="www.linkedin.com/in/ana-ximena-vanegas-mateus-84311b350" target="_blank">
+      LinkedIn
+    </a>
+  </p>
+  <p><strong>📧</strong> <a href="mailto:ximenavanegas88@gmail.com">ximenavanegas88@gmail.com</a></p>
+  <p><strong>📞</strong> <a href="https://api.whatsapp.com/send/?phone=573226576782&text&type=phone_number&app_absent=0">+57 3226576782 </a></p></p>
+  
+  
+</div>
+</aside>
 
     <!-- TERMINAL DERECHA -->
     <section class="terminal">
       <div class="output" id="info">
         Bienvenidos a mi portafolio \
-
-        &gt; Apasionada por la tecnología y el desarrollo web<br />
         &gt;¡Explora mis proyectos y contáctame si quieres colaborar!
       </div>
       <div class="cursor"></div>
@@ -74,19 +87,8 @@
 
         <p>
           Ingeniera en Sistemas y Computación con enfoque en desarrollo web y automatización de procesos. 
-          Apasionada por crear soluciones prácticas y eficientes, integrando código limpio con un diseño funcional 
-          y orientado a la experiencia del usuario.
-        </p>
-        <br />
-        <p>
           Cuento con experiencia en tecnologías como HTML, CSS, JavaScript y Python, así como en el uso de herramientas 
-          como WordPress y macros en Excel mediante VBA. Además de un interés particular en áreas como la ciberseguridad 
-          y la optimización del rendimiento del software.
-        </p>
-        <br />
-        <p>
-          Busco oportunidades que me permitan seguir creciendo como desarrolladora, al tiempo que contribuyo en proyectos con 
-          impacto real y significativo.
+          como WordPress, Elementor Pro y macros en Excel avanzado mediante VBA.
         </p>
         <br />
         <p>
@@ -96,7 +98,7 @@
         </p>
         <br />
         <!-- Botón para ver el CV -->
-        <a href="https://drive.google.com/file/d/1PqaPK-DGNmpxBe3N8L8t0e2VvygVoNg8/view?usp=sharing" target="_blank" class="btn-proyecto">Ver CV</a>
+        <a href="https://drive.google.com/file/d/1kBwASVNy589UcZ4IR1PTD-PAT3_0os7Z/view?usp=sharing" target="_blank" class="btn-proyecto">Ver CV</a>
 
       </section>
 
@@ -105,6 +107,7 @@
         <h2>Mis Proyectos</h2>
         <p>Estos son algunos de los proyectos en los que he trabajado. Puedes ver más detalles o acceder a ellos
           haciendo clic en los enlaces.</p>
+          <br>
 
         <div class="proyectos-lista">
           <!-- Proyecto 1 -->
@@ -136,17 +139,8 @@
 
 <!-- SECCIÓN DE CONTACTO -->
 <section id="contacto" class="contacto">
-  <h2>Contacto</h2>
-  <br />
-
-  <!-- Información de contacto -->
-  <div class="info-contacto">
-    <p>📞 <strong>Teléfono:</strong> +57 322 6576782</p>
-    <p>📧 <strong>Correo:</strong> ximenavanegas88@gmail.com</p>
-  </div>
-
-  <br />
-
+  <h2>Contáctame</h2><!-- CAMBIO: título ajustado -->
+  
   <!-- Formulario controlado por JS -->
   <form id="formulario-contacto" class="formulario-contacto">
     <input type="hidden" name="_template" value="table" />
@@ -181,7 +175,7 @@
 
   </main>
 
-
+  
 </body>
 
 </html>
